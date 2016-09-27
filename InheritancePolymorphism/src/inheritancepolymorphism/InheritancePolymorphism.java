@@ -20,7 +20,7 @@ public class InheritancePolymorphism {
     static double y;
     static double p;
     static double l;
-  public static String n;
+ // public static String n;
   
     public static void main(String[] args) throws Exception {
         
@@ -37,15 +37,8 @@ public class InheritancePolymorphism {
        
        
      
-   Scanner input = new Scanner(System.in);
-        n = input.next(); 
-        if(n.equals("^")){//ВВод операции в формате "(+-*\^) х у"
-       x = input.nextDouble();
-        }
-        else{
-       x = input.nextDouble();
-       y = input.nextDouble();
-        }
+  Scanner input = new Scanner(System.in);
+ String p = input.next();
    /* Pattern pattern = Pattern.compile("\\W[0-9]*");
     Matcher matcher = pattern.matcher(input);
        if (matcher.find()){
@@ -58,37 +51,37 @@ public class InheritancePolymorphism {
        }*/
         
             
-                switch (n){
+              switch (p){
                     case "^":
                         Quadra q = new Quadra();
                        
-                       System.out.println("x*x="+q.calc(x));
+                       System.out.println("x*x="+q.calc());
                         break;
                     case "+":
                         Addition a = new Addition();
                        
                          
-                        System.out.println("x+y="+a.calc(x,y));
+                        System.out.println("x+y="+a.calc());
                         break;
                     case "-":
                          Subtraction s = new Subtraction();
                        
                        
-                        System.out.println("x-y="+s.calc(x,y));
+                        System.out.println("x-y="+s.calc());
                         break;
                     case "*":
                         Multiplication m = new Multiplication();
                         
-                        System.out.println("x*y="+m.calc(x,y));
+                        System.out.println("x*y="+m.calc());
                         break;
                     case "/":
                         Division d = new Division();
                         
-                        System.out.println("x/y="+d.calc(x,y));
+                        System.out.println("x/y="+d.calc());
                         break;
                     default:
                         break;
-                }      
+                }    
             
                
             
@@ -105,11 +98,15 @@ public class InheritancePolymorphism {
     }
     //Главный абстрактный класс 
     abstract class Arithmetic {
-    
-       double x;
-       double y;
-       double p;
-       double l;
+        
+        double x,y;
+     Scanner input = new Scanner(System.in);
+        
+       
+        
+      
+        
+       
        abstract double calc(); //Абстрактный метод
 
     }
@@ -120,17 +117,11 @@ public class InheritancePolymorphism {
     класса Arithmetic.*/
  class Addition extends Arithmetic{
 
-    
+     
         
     
 
-        Addition() {
-            super.x = x;
-            super.y = y;
-            super.p = p;
-            super.l = l;
-            
-        }
+        
 
         
 
@@ -141,15 +132,17 @@ public class InheritancePolymorphism {
     
         
     double calc(double x, double y){
-    
+       
+        
+        x = input.nextDouble();
+      y = input.nextDouble();
+   
         return (x+y);
+    
+   
     }
-    double calc(double x, double y, double p){
-        return (x+y+p);
-    }
-    double calc(double x, double y, double p, double l){
-        return (x+y+p+l);
-    }
+    
+    
      
        
 
@@ -168,16 +161,20 @@ public class InheritancePolymorphism {
         
         
 
-          Subtraction() {
-         super.x = x;
-         super.y = y;
-        }
+          
         @Override
         public String toString(){return "вычитание";}
         
        
           double calc(double x , double y){
+             
+              
+               x = input.nextDouble();
+      y = input.nextDouble();
+              
             return (x-y);
+              
+              
         }
 
           
@@ -192,16 +189,19 @@ public class InheritancePolymorphism {
         
          
 
-        Multiplication() {
-            super.x = x;
-            super.y = y;
-        }
+       
          @Override
          public String toString(){return "Умножение";}
          
          
         double calc(double x , double y){
-             return(x*y);
+         
+              x = input.nextDouble();
+      y = input.nextDouble();
+   
+        return (x*y);
+    
+ 
          }
 
         @Override
@@ -213,12 +213,8 @@ public class InheritancePolymorphism {
   class Division extends Arithmetic {
     
         
-       
 
-       Division() {
-           super.y = y;
-           super.x = x;
-        }
+     
 
         
         @Override
@@ -227,32 +223,33 @@ public class InheritancePolymorphism {
         
         double calc(double x , double y)  {
             
-            return (x/y);
-        }
-
+              x = input.nextDouble();
+      y = input.nextDouble();
    
-       @Override
-    double calc() {
-      if (x <= 0)  try {
-          throw new Exception("На ноль делить нельзя"); //To change body of generated methods, choose Tools | Templates.
-      } catch (Exception ex) {
-          Logger.getLogger(Division.class.getName()).log(Level.SEVERE, null, ex);
-      
-    }
-      return x;
-   }   
+        return (x/y);
+
+            
+        }
+        
+        @Override
+   double calc(){
+       throw new UnsupportedOperationException("Not supported yet.");
+   }
+   
+       
   }
     class Quadra extends Arithmetic {
         
-     Quadra() {
-            super.x = x;
-            
-        }
+     
       @Override
       public String toString(){return "Возведение в степень";}
       double calc(double x) {
-          
-          return (x*x);
+        
+           x = input.nextDouble();
+ 
+        return (x*x);
+    
+  
       }
 
        
