@@ -18,7 +18,9 @@ import java.util.List;
 public class InheritancePolymorphism {
 public static double x;
 public static double y;
- 
+private static String p;
+
+
 
   
    
@@ -28,15 +30,17 @@ public static double y;
     public static void main(String[] args) throws Exception {
          System.out.println("Вводите операцию в обратной польской нотации \"- x y\"");
  Scanner name = new Scanner(System.in); 
- String p = name.next();  
-        x=name.nextDouble();
-                y=name.nextDouble();
+   
+Pars parse = new Pars();
+
+
         //фабрика
-        AdditionFactory fa = new AdditionFactory(x,y);
-        SubtractionFactory sf = new SubtractionFactory(x,y);
-        MultiplicationFactory mf = new MultiplicationFactory(x,y);
-        DivisionFactory df = new DivisionFactory(x,y);
-        
+        AdditionFactory fa = new AdditionFactory();
+        SubtractionFactory sf = new SubtractionFactory();
+        MultiplicationFactory mf = new MultiplicationFactory();
+        DivisionFactory df = new DivisionFactory();
+        String p = name.next();
+        parse.number(p);
   List<Arithmetic> arithmetic = new ArrayList<Arithmetic>();
       arithmetic.add(fa.createArithmetic());
       arithmetic.add(sf.createArithmetic());
@@ -54,23 +58,22 @@ public static double y;
  
 
  for(Arithmetic v: arithmetic){
-       if(p.equals("+")){
-         
-           arithmetic.get(0);
-       }
-       else if(p.equals("-")){
-           
-           arithmetic.get(1);
-           
-       }
-       else if(p.equals("*")){
-         
-           arithmetic.get(2);
-       }
-       else if(p.equals("/")){
-           
-           arithmetic.get(3);
-       }
+             switch (p) {
+                 case "+":
+                     System.out.println(arithmetic.get(0));
+                     break;
+                 case "-":
+                     arithmetic.get(1);
+                     break;
+                 case "*":
+                     arithmetic.get(2);
+                     break;
+                 case "/":
+                     arithmetic.get(3);
+                     break;
+                 default:
+                     break;
+             }
    }
      /*x = name.nextDouble();
       y = name.nextDouble();

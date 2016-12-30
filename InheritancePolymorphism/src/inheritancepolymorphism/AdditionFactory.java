@@ -5,6 +5,7 @@
  */
 package inheritancepolymorphism;
 
+
 /**
  *
  * @author admin
@@ -12,9 +13,17 @@ package inheritancepolymorphism;
 public class AdditionFactory implements ArithmeticFactory {
 private double x;
 private double y;
-AdditionFactory(double x, double y){
-  this.x = x;
-  this.y = y;  
+public void setX(double x){
+    this.x = x;
+}
+public double getX(){
+    return x;
+}
+public void setY(double y){
+    this.y = y;
+}
+public double getY(){
+    return y;
 }
     
     @Override

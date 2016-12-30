@@ -9,13 +9,6 @@ package inheritancepolymorphism;
  *
  * @author admin
  */
-public interface ArithmeticFactory {
-
-  
-    /**
-     *
+public class Number {
     
-     * @return
-     */
-    public Arithmetic createArithmetic();
 }
