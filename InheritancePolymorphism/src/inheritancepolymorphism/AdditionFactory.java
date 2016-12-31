@@ -13,7 +13,11 @@ package inheritancepolymorphism;
 public class AdditionFactory implements ArithmeticFactory {
 private double x;
 private double y;
-public void setX(double x){
+AdditionFactory(double x, double y){
+    this.x = x;
+    this.y = y;
+}
+/*public void setX(double x){
     this.x = x;
 }
 public double getX(){
@@ -24,7 +28,7 @@ public void setY(double y){
 }
 public double getY(){
     return y;
-}
+}*/
     
     @Override
     public Arithmetic createArithmetic() {

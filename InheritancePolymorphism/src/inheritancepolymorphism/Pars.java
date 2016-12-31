@@ -17,27 +17,7 @@ public class Pars {
   public void  number(String p){
       
       
-     this.x = num.nextDouble();
-      this.y = num.nextDouble();
-      switch(p){
-          case"+":
-          AdditionFactory af = new AdditionFactory();
-          af.setX(x);af.setY(y);
-          break;
-       case "-":
-       SubtractionFactory sf = new SubtractionFactory();
-       sf.setX(x);sf.setY(y);
-       break;
-       case"*":
-       MultiplicationFactory mf = new MultiplicationFactory();
-       mf.setX(x);mf.setY(y);
-       break;
-       case"/":
-       DivisionFactory df = new DivisionFactory();
-       df.setX(x);df.setY(y);
-       break;
-      default:
-          break;
+     
       }
   }
-}
+

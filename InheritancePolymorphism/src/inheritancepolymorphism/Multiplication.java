@@ -24,7 +24,7 @@ public class Multiplication implements Arithmetic{
     @Override
     public double calc() {
         z = x*y;
-        System.out.println("x*y"+z);
+        System.out.println(x+" * "+y+" = "+z);
         return x*y;
     }
     

@@ -8,17 +8,20 @@ package inheritancepolymorphism;
 
 
 
+
 import java.util.Scanner;
 //import java.util.regex.Pattern;
 //import java.util.regex.Matcher;
-import java.util.ArrayList;
-import java.util.List;
+
+
+
 
 
 public class InheritancePolymorphism {
 public static double x;
 public static double y;
-private static String p;
+public static String p;
+   
 
 
 
@@ -31,76 +34,40 @@ private static String p;
          System.out.println("Вводите операцию в обратной польской нотации \"- x y\"");
  Scanner name = new Scanner(System.in); 
    
-Pars parse = new Pars();
+Pars par = new Pars();
+par.number(p);
 
-
-        //фабрика
-        AdditionFactory fa = new AdditionFactory();
-        SubtractionFactory sf = new SubtractionFactory();
-        MultiplicationFactory mf = new MultiplicationFactory();
-        DivisionFactory df = new DivisionFactory();
-        String p = name.next();
-        parse.number(p);
-  List<Arithmetic> arithmetic = new ArrayList<Arithmetic>();
-      arithmetic.add(fa.createArithmetic());
-      arithmetic.add(sf.createArithmetic());
-      arithmetic.add(mf.createArithmetic()); 
-      arithmetic.add(df.createArithmetic());
-      
-       
-   
-        
-      
-       
-       
+        //фабрика 
+        p = name.next();x = name.nextDouble();y = name.nextDouble();
+         
+       ArithmeticFactory  arithmetic = getNameArithmetic(p,x,y);
+         
+     Arithmetic a = arithmetic.createArithmetic();
+     a.calc();
      
- 
- 
-
- for(Arithmetic v: arithmetic){
-             switch (p) {
-                 case "+":
-                     System.out.println(arithmetic.get(0));
-                     break;
-                 case "-":
-                     arithmetic.get(1);
-                     break;
-                 case "*":
-                     arithmetic.get(2);
-                     break;
-                 case "/":
-                     arithmetic.get(3);
-                     break;
-                 default:
-                     break;
-             }
-   }
-     /*x = name.nextDouble();
-      y = name.nextDouble();
-    switch(p){
-        case "+":
-            Addition a = new Addition(x,y);
-            a.calc();
-            break;
-        case "-":
-            Subtraction s = new Subtraction();
-            s.calc();
-            break;
-        case "*":
-            Multiplication m = new Multiplication();
-            m.calc();
-            break;
-        case "/":
-            Division d = new Division();
-            d.calc();
-            break;
-            
-    }*/
+     
         
-            
+ }
+
+    private static ArithmeticFactory getNameArithmetic(String arithmetic, double x, double y) {
+    switch (arithmetic) {
+        case "+":
+            return new AdditionFactory(x,y);
+        case "-":
+            return new SubtractionFactory(x,y);
+        case "*":
+            return new MultiplicationFactory(x,y);
+        case "/":
+            return new DivisionFactory(x,y);
+        default:
+            break;
+    }
+     throw new RuntimeException(" Не поддерживаемый тип операции. "+arithmetic);
     }
 }
-                   
+   
+
+             
             
                
             
