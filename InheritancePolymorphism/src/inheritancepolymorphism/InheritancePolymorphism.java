@@ -31,17 +31,17 @@ public static String p;
  // public static String n;
   
     public static void main(String[] args) throws Exception {
-         System.out.println("Вводите операцию в обратной польской нотации \"- x y\"");
+         System.out.println("Формат ввода операций - \"x + y\"");
  Scanner name = new Scanner(System.in); 
    
-Pars par = new Pars();
-par.number(p);
 
-        //фабрика 
-        p = name.next();x = name.nextDouble();y = name.nextDouble();
-         
+
+      
+        String t = name.next();p = name.next();String u = name.next();
+        x = Integer.parseInt(t);
+        y = Integer.parseInt(u);
        ArithmeticFactory  arithmetic = getNameArithmetic(p,x,y);
-         
+        
      Arithmetic a = arithmetic.createArithmetic();
      a.calc();
      
@@ -62,11 +62,12 @@ par.number(p);
         default:
             break;
     }
-     throw new RuntimeException(" Не поддерживаемый тип операции. "+arithmetic);
+     throw new RuntimeException(" Не поддерживаемый тип операции, или ошибка ввода. "+arithmetic);
     }
+    
 }
    
-
+ 
              
             
                
