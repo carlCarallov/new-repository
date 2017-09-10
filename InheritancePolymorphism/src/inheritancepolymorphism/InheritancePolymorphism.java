@@ -9,7 +9,10 @@ package inheritancepolymorphism;
 
 
 
+
 import java.util.Scanner;
+import javax.swing.JFrame;
+
 //import java.util.regex.Pattern;
 //import java.util.regex.Matcher;
 
@@ -17,25 +20,27 @@ import java.util.Scanner;
 
 
 
-public class InheritancePolymorphism {
+public class InheritancePolymorphism  {
+    
 public static double x;
 public static double y;
 public static String p;
-   
 
-
-
-  
-   
-  
- // public static String n;
-  
-    public static void main(String[] args) throws Exception {
+private static JFrame new_window = new NewGui();
+private static NewGui num = new NewGui();
+   public static void main(String[] args) throws Exception {
+        
+        new_window.setVisible(true);
+        
+        
+       int er = (int) num.a;
+       System.out.println(er);
+        
          System.out.println("Формат ввода операций - \"x + y\"");
  Scanner name = new Scanner(System.in); 
    
 
-
+ 
       
         String t = name.next();p = name.next();String u = name.next();
         x = Integer.parseInt(t);
@@ -48,11 +53,14 @@ public static String p;
      
         
  }
+     
 
     private static ArithmeticFactory getNameArithmetic(String arithmetic, double x, double y) {
+        
     switch (arithmetic) {
         case "+":
             return new AdditionFactory(x,y);
+            
         case "-":
             return new SubtractionFactory(x,y);
         case "*":
@@ -64,6 +72,7 @@ public static String p;
     }
      throw new RuntimeException(" Не поддерживаемый тип операции, или ошибка ввода. "+arithmetic);
     }
+    
     
 }
    

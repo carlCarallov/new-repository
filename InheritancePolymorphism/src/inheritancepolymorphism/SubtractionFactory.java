@@ -16,15 +16,7 @@ public class SubtractionFactory implements ArithmeticFactory {
         this.x = x;
         this.y = y;
     }
-  /* public void setX(double x){
-       this.x = x;
-   }
-   public double getX(){
-       return x;
-   }
-   public void setY(double y){
-       this.y = y;
-   }*/
+ 
        
  
     @Override

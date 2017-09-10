@@ -16,9 +16,16 @@ public class Multiplication implements Arithmetic{
      double x;
      double y;
      double z;
-   Multiplication(double x, double y){
-       this.x = x;
-       this.y = y;
+ Multiplication(double x, double y){
+     this.x = x;
+     this.y = y;
+ }
+   public void initialize(double x, double y){
+       this.z = y + x;
+   }
+   public void initialize(double x){
+       this.y = z;
+       this.z = y + x;
    }
     
     @Override
