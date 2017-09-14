@@ -21,8 +21,11 @@ import javax.swing.JTextArea;
 
 public class NewGui  extends JFrame {
    public String n;
-    public double a = 0;
-    JLabel label = new JLabel(" ");
+    int $i1 = 0,$i2=0;
+    int $i3=0;
+   public char[][][] arr ;
+  
+    JTextArea label = new JTextArea(" ");
     JButton del = new JButton("DEL");
     JButton one = new JButton("1");
     
@@ -50,8 +53,9 @@ public class NewGui  extends JFrame {
        JPanel panel = new JPanel();
       panel.setLayout(null);
       
-      label.setSize(150,50);
-      label.setLocation(65,20);
+      label.setSize(180,50);
+      label.setLocation(35,40);
+      label.setMargin(new Insets(21,5,10,10));
       panel.add(label);
       n = label.getText();
      
@@ -77,9 +81,16 @@ public class NewGui  extends JFrame {
       one.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent event){
+            if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
             
             n += "1";
-            a += Integer.parseInt("1");
             label.setText(n);
             
         }
@@ -92,7 +103,14 @@ public class NewGui  extends JFrame {
       two.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-              
+            if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n += "2";
               label.setText(n);
           }
@@ -104,7 +122,14 @@ public class NewGui  extends JFrame {
       tree.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-            
+             if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="3";
               label.setText(n);
           }
@@ -116,7 +141,14 @@ public class NewGui  extends JFrame {
         thirthy.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             
+            if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="4";
               label.setText(n);
           }
@@ -128,7 +160,14 @@ public class NewGui  extends JFrame {
        five.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             
+            if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="5";
               label.setText(n);
           }
@@ -140,7 +179,14 @@ public class NewGui  extends JFrame {
       six.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             
+              if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="6";
               label.setText(n);
           }
@@ -152,7 +198,14 @@ public class NewGui  extends JFrame {
       seven.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             
+             if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="7";
               label.setText(n);
           }
@@ -164,7 +217,14 @@ public class NewGui  extends JFrame {
       eight.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-              
+             if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="8";
               label.setText(n);
           }
@@ -176,7 +236,14 @@ public class NewGui  extends JFrame {
       nine.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-            
+             if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="9";
               label.setText(n);
           }
@@ -188,7 +255,14 @@ public class NewGui  extends JFrame {
       zero.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-              
+             if($i1==0){
+            arr[$i1][$i2][$i3] = '1';
+            $i2++;
+            }
+            else{
+                arr[$i1][$i2][$i3] = '1';
+                $i3++;
+            }
               n+="0";
               label.setText(n);
           }
@@ -212,8 +286,13 @@ public class NewGui  extends JFrame {
       plus.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-              
-              n+="+";
+              if($i1==0){
+            arr[$i1][$i2][$i3]='+';
+             }
+              else{
+                  $i1 = 0;
+                  arr[$i1][$i2][$i3]='+';
+              }
               label.setText(n);
           }
       });
@@ -236,7 +315,7 @@ public class NewGui  extends JFrame {
       multipl.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             
+            
               n+="*";
               label.setText(n);
           }

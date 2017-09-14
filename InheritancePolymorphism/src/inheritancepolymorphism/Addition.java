@@ -15,7 +15,7 @@ public class Addition implements Arithmetic {
      public double x;
      public double y;
      double z;
-    
+    NewGui p = new NewGui();
     
 Addition(double x, double y){
     this.x = x;
@@ -26,7 +26,8 @@ Addition(double x, double y){
    public double calc(){
       
       z = x+y;
-      
+ 
+        
        System.out.println(x+" + "+y+" = "+z);
        return x+y;
    }
