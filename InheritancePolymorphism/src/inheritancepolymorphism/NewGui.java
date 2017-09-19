@@ -82,7 +82,7 @@ public class NewGui  extends JFrame {
         @Override
         public void actionPerformed(ActionEvent event){
             if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
+            arr[$i1][$i2][$i3] = 1;
             $i2++;
             }
             else{

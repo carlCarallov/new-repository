@@ -13,6 +13,7 @@ package inheritancepolymorphism;
 import java.util.Scanner;
 import javax.swing.JFrame;
 import java.lang.Integer;
+import java.lang.StringBuilder;
 //import java.util.regex.Pattern;
 //import java.util.regex.Matcher;
 
@@ -29,10 +30,16 @@ public static String p;
 private static JFrame new_window = new NewGui();
 private static NewGui num = new NewGui();
    public static void main(String[] args) throws Exception {
-        
+        String st = "0" ;
+        String su  = "0";
         new_window.setVisible(true);
-        StringBuilder t = new StringBuilder();
-        StringBuilder u = new StringBuilder();
+        
+        
+        if(num.arr.length>0){
+            
+       
+        StringBuilder t = new StringBuilder(st);
+        StringBuilder u = new StringBuilder(su);
          
        for(int i = 0;i<num.$i1;i++){
             switch (num.arr[i][0][0]) {
@@ -67,7 +74,7 @@ private static NewGui num = new NewGui();
             
         }
              
-      
+        }    
       
         
          System.out.println("Формат ввода операций - \"x + y\"");
@@ -77,8 +84,8 @@ private static NewGui num = new NewGui();
  
       
        
-        x = Integer.parseInt(t);
-        y = Integer.parseInt(u);
+        x = Integer.parseInt(st);
+        y = Integer.parseInt(su);
        ArithmeticFactory  arithmetic = getNameArithmetic(p,x,y);
         
      Arithmetic a = arithmetic.createArithmetic();
