@@ -28,7 +28,8 @@ Addition(double x, double y){
       z = x+y;
  
         
-       System.out.println(x+" + "+y+" = "+z);
+       p.n.append(z);
+       System.out.println(z);
        return x+y;
    }
 

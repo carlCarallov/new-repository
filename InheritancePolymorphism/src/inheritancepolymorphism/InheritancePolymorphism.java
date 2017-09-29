@@ -10,12 +10,11 @@ package inheritancepolymorphism;
 
 
 
-import java.util.Scanner;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
-import java.lang.Integer;
-import java.lang.StringBuilder;
-//import java.util.regex.Pattern;
-//import java.util.regex.Matcher;
+
 
 
 
@@ -27,69 +26,74 @@ public static double x;
 public static double y;
 public static String p;
 
-private static JFrame new_window = new NewGui();
+
 private static NewGui num = new NewGui();
+private static  JFrame new_window = new NewGui();
+private static FirstListener list = new FirstListener();
+public  String st;
+public static  String su;
+ public static FirstListener $list = new FirstListener();
+ static boolean  f1 = num.f;
+ static boolean $sam = num.sam;
+ 
    public static void main(String[] args) throws Exception {
-        String st = "0" ;
-        String su  = "0";
-        new_window.setVisible(true);
+       
+      new_window.setVisible(true);
+      Thread.sleep(10000);
+   
+     
+        
+        Thread new_thread;
+    new_thread = new FirstListener(){
+        @Override
+        public void run(){
+            synchronized(num){
+                do{
+                    if(!f1){
+                        if($sam){
+                            
+                            ArithmeticFactory  arithmetic = getNameArithmetic($list.getStrC(),$list.getStrX(),$list.getStrY());
+                            Arithmetic a = arithmetic.createArithmetic();
+                            a.calc();
+                        }
+                    }else {
+                        return;
+                    }
+                    
+                    try{
+                        Thread.sleep(1);
+                        
+                    } catch (InterruptedException e) {}
+                    
+                    
+                }while(true);
+            }
+        }
+    };
+        
+        new_thread.start();
         
         
-        if(num.arr.length>0){
             
        
-        StringBuilder t = new StringBuilder(st);
-        StringBuilder u = new StringBuilder(su);
+       
          
-       for(int i = 0;i<num.$i1;i++){
-            switch (num.arr[i][0][0]) {
-                case '+':
-                    p = "+";
-                    if(num.$i2>0 && num.$i3 == 0){
-                       
-                        for( int $t = 0;$t<num.$i2;$t++){
-                             t.insert($t,num.arr[i][$t][0]);
-                        }
-                    }
-                    else if(num.$i3>0){
-                        for(int $t=0;$t<num.$i2;$t++){
-                            for(int $t2 = 0;$t<num.$i3;$t2++){
-                                 u.insert($t2,num.arr[i][$t][$t2]);
-                            }
-                        }
-                    }
-                    break;
-                case '-':
-                    p="-";
-                    break;
-                case '*':
-                    p="*";
-                    break;
-                case '/':
-                    p="/";
-                    break;
-                default:
-                    break;
-            }
-            
-        }
+  
              
-        }    
+            
       
         
          System.out.println("Формат ввода операций - \"x + y\"");
- Scanner name = new Scanner(System.in); 
+
    
 
  
       
        
-        x = Integer.parseInt(st);
-        y = Integer.parseInt(su);
-       ArithmeticFactory  arithmetic = getNameArithmetic(p,x,y);
+     
+       
         
-     Arithmetic a = arithmetic.createArithmetic();
-     a.calc();
+    
      
      
         

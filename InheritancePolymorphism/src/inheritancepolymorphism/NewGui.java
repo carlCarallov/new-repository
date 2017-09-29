@@ -19,18 +19,20 @@ import javax.swing.JTextArea;
 
 
 
-public class NewGui  extends JFrame {
-   public String n;
-    int $i1 = 0,$i2=0;
-    int $i3=0;
-   public char[][][] arr ;
+public class NewGui  extends JFrame  {
+   
+   public StringBuffer n = new StringBuffer();
+  public  static StringBuffer $num = new StringBuffer();
+   public  static StringBuffer $num1 = new StringBuffer();
+    public static  StringBuffer artm = new StringBuffer();
+  public volatile boolean f = false;
+  public volatile boolean sam = false;
+ 
   
     JTextArea label = new JTextArea(" ");
     JButton del = new JButton("DEL");
     JButton one = new JButton("1");
-    
-   
-    JButton two = new JButton("2");
+     JButton two = new JButton("2");
     JButton tree = new JButton("3");
     JButton thirthy = new JButton("4");
     JButton five = new JButton("5");
@@ -45,19 +47,22 @@ public class NewGui  extends JFrame {
     JButton div = new JButton("/");
     JButton same = new JButton("=");
     JButton point = new JButton(".");
-    
-    NewGui(){
-        super("Калькулятор");
+
+   
+    NewGui() {
+     
+        
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
        JPanel panel = new JPanel();
       panel.setLayout(null);
+      setSize(310,350);
       
       label.setSize(180,50);
       label.setLocation(35,40);
       label.setMargin(new Insets(21,5,10,10));
       panel.add(label);
-      n = label.getText();
+      n.append(label.getText());
      
        del.setSize(45,35);
        del.setMargin(new Insets(0,0,0,0));
@@ -67,8 +72,10 @@ public class NewGui  extends JFrame {
         @Override
         public void actionPerformed(ActionEvent event){
             
-            n = " ";
-            label.setText(n);
+            f = !f;
+            
+            
+            label.setText(n.toString());
             
         }
     });
@@ -81,17 +88,14 @@ public class NewGui  extends JFrame {
       one.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent event){
-            if($i1==0){
-            arr[$i1][$i2][$i3] = 1;
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-            
-            n += "1";
-            label.setText(n);
+           if(artm.equals("")){
+              $num.append(1);
+           }
+           else{
+               $num1.append(1);
+           }
+            n.append(1);
+            label.setText(n.toString());
             
         }
     });
@@ -103,16 +107,9 @@ public class NewGui  extends JFrame {
       two.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-            if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n += "2";
-              label.setText(n);
+          
+              n.append(2);
+              label.setText(n.toString());
           }
       });
       panel.add(two);
@@ -122,16 +119,9 @@ public class NewGui  extends JFrame {
       tree.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="3";
-              label.setText(n);
+           
+              n.append(3);
+              label.setText(n.toString());
           }
       });
       panel.add(tree);
@@ -141,16 +131,9 @@ public class NewGui  extends JFrame {
         thirthy.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-            if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="4";
-              label.setText(n);
+         
+              n.append(4);
+              label.setText(n.toString());
           }
       });
       panel.add(thirthy);
@@ -160,16 +143,9 @@ public class NewGui  extends JFrame {
        five.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-            if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="5";
-              label.setText(n);
+          
+              n.append(5);
+              label.setText(n.toString());
           }
       });
       panel.add(five);
@@ -179,16 +155,9 @@ public class NewGui  extends JFrame {
       six.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-              if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="6";
-              label.setText(n);
+            
+              n.append(6);
+              label.setText(n.toString());
           }
       });
       panel.add(six);
@@ -198,16 +167,9 @@ public class NewGui  extends JFrame {
       seven.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="7";
-              label.setText(n);
+          
+             n.append(7);
+              label.setText(n.toString());
           }
       });
       panel.add(seven);
@@ -217,16 +179,9 @@ public class NewGui  extends JFrame {
       eight.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="8";
-              label.setText(n);
+            
+              n.append(8);
+              label.setText(n.toString());
           }
       });
       panel.add(eight);
@@ -236,16 +191,9 @@ public class NewGui  extends JFrame {
       nine.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="9";
-              label.setText(n);
+           
+              n.append(9);
+              label.setText(n.toString());
           }
       });
       panel.add(nine);
@@ -255,16 +203,9 @@ public class NewGui  extends JFrame {
       zero.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             if($i1==0){
-            arr[$i1][$i2][$i3] = '1';
-            $i2++;
-            }
-            else{
-                arr[$i1][$i2][$i3] = '1';
-                $i3++;
-            }
-              n+="0";
-              label.setText(n);
+           
+              n.append(0);
+              label.setText(n.toString());
           }
       });
       panel.add(zero);
@@ -275,8 +216,8 @@ public class NewGui  extends JFrame {
           @Override
           public void actionPerformed(ActionEvent event){
              
-              n+=".";
-              label.setText(n);
+              n.append(".");
+              label.setText(n.toString());
           }
       });
       panel.add(point);
@@ -286,14 +227,8 @@ public class NewGui  extends JFrame {
       plus.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-              if($i1==0){
-            arr[$i1][$i2][$i3]='+';
-             }
-              else{
-                  $i1 = 0;
-                  arr[$i1][$i2][$i3]='+';
-              }
-              label.setText(n);
+              n.append("+");
+              label.setText(n.toString());
           }
       });
       panel.add(plus);
@@ -303,9 +238,11 @@ public class NewGui  extends JFrame {
       minus.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-              
-              n+="-";
-              label.setText(n);
+              if(artm.equals("")){
+                  artm.append("+");
+              }
+             n.append("-");
+              label.setText(n.toString());
           }
       });
       panel.add(minus);
@@ -316,8 +253,8 @@ public class NewGui  extends JFrame {
           @Override
           public void actionPerformed(ActionEvent event){
             
-              n+="*";
-              label.setText(n);
+              n.append("*");
+              label.setText(n.toString());
           }
       });
       panel.add(multipl);
@@ -328,8 +265,8 @@ public class NewGui  extends JFrame {
           @Override
           public void actionPerformed(ActionEvent event){
              
-              n+="/";
-              label.setText(n);
+              n.append("/");
+              label.setText(n.toString());
           }
       });
       panel.add(div);
@@ -339,9 +276,14 @@ public class NewGui  extends JFrame {
       same.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent event){
-             
-              n+="="+" ";
-              label.setText(n);
+             FirstListener list = new FirstListener();
+             list.setStrX($num);
+             list.setStrY($num1);
+             list.setStrC(artm);
+            
+              n.append("="+" ");
+              label.setText(n.toString());
+               sam = !sam;
           }
       });
       panel.add(same);
@@ -349,9 +291,11 @@ public class NewGui  extends JFrame {
       
         getContentPane().add(panel);
         
-        setSize(310,350);
+        
         
         
     }
+
+   
     
 }
