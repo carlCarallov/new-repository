@@ -5,14 +5,13 @@
  */
 package inheritancepolymorphism;
 
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+
 
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -22,9 +21,9 @@ import javax.swing.JTextArea;
 public class NewGui  extends JFrame  {
    
    public StringBuffer n = new StringBuffer();
-  public  static StringBuffer $num = new StringBuffer();
-   public  static StringBuffer $num1 = new StringBuffer();
-    public static  StringBuffer artm = new StringBuffer();
+  public  StringBuffer $num = new StringBuffer();
+   public   StringBuffer $num1 = new StringBuffer();
+    public   StringBuffer artm = new StringBuffer();
   public volatile boolean f = false;
   public volatile boolean sam = false;
  
@@ -88,7 +87,7 @@ public class NewGui  extends JFrame  {
       one.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent event){
-           if(artm.equals("")){
+           if(artm.toString().equals(null)){
               $num.append(1);
            }
            else{

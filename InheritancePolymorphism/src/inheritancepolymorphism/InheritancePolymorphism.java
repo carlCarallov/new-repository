@@ -11,6 +11,7 @@ package inheritancepolymorphism;
 
 
 
+import static inheritancepolymorphism.InheritancePolymorphism.$list;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -27,51 +28,46 @@ public static double y;
 public static String p;
 
 
-private static NewGui num = new NewGui();
+private static  NewGui num = new NewGui();
 private static  JFrame new_window = new NewGui();
-private static FirstListener list = new FirstListener();
-public  String st;
-public static  String su;
+private static  FirstListener list = new FirstListener();
+
  public static FirstListener $list = new FirstListener();
- static boolean  f1 = num.f;
- static boolean $sam = num.sam;
  
    public static void main(String[] args) throws Exception {
        
       new_window.setVisible(true);
-      Thread.sleep(10000);
+      
    
      
         
-        Thread new_thread;
-    new_thread = new FirstListener(){
-        @Override
-        public void run(){
-            synchronized(num){
+       
+    
+       
+            
                 do{
-                    if(!f1){
-                        if($sam){
-                            
+                    if(!(num.f)){
+                        if(num.sam){
+                             
+                          
+                           
                             ArithmeticFactory  arithmetic = getNameArithmetic($list.getStrC(),$list.getStrX(),$list.getStrY());
-                            Arithmetic a = arithmetic.createArithmetic();
-                            a.calc();
+                             Arithmetic a = arithmetic.createArithmetic();
+                             a.calc();
+                            
                         }
                     }else {
                         return;
                     }
                     
-                    try{
-                        Thread.sleep(1);
-                        
-                    } catch (InterruptedException e) {}
-                    
+                  
                     
                 }while(true);
-            }
-        }
-    };
+            
         
-        new_thread.start();
+   
+        
+      
         
         
             
@@ -83,7 +79,7 @@ public static  String su;
             
       
         
-         System.out.println("Формат ввода операций - \"x + y\"");
+         
 
    
 
@@ -95,8 +91,7 @@ public static  String su;
         
     
      
-     
-        
+      
  }
      
 

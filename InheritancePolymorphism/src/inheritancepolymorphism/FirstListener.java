@@ -9,17 +9,17 @@ package inheritancepolymorphism;
 
 
 
-public class FirstListener extends Thread {
-    private String x;
-    private String y;
-    private String c;
+public class FirstListener {
+    private static String x1;
+    private static String y1;
+    private static String c;
  
   
     public void setStrX(StringBuffer x){
-        this.x = x.toString();
+        this.x1 = x.toString();
     }
      public void setStrY(StringBuffer y){
-         this.y = y.toString();
+         this.y1 = y.toString();
      }
      public void setStrC(StringBuffer c){
          this.c = c.toString();
@@ -28,11 +28,11 @@ public class FirstListener extends Thread {
      
      
      public  double getStrX(){
-         double $x = Integer.parseInt(this.x);
+         double $x = Integer.parseInt(this.x1);
          return $x;
      }
       public double getStrY(){
-         double $y = Integer.parseInt(this.y);
+         double $y = Integer.parseInt(this.y1);
          return $y;
      }
        public String getStrC(){
